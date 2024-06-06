@@ -1,0 +1,9 @@
+2024-06-06 14:42:46 [31merror[39m: uncaughtException: Cannot read properties of undefined (reading 'emit')
+TypeError: Cannot read properties of undefined (reading 'emit')
+    at Socket.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\server.js:178:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-06 14:43:00 [31merror[39m: uncaughtException: Cannot read properties of undefined (reading 'emit')
+TypeError: Cannot read properties of undefined (reading 'emit')
+    at Socket.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\server.js:178:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-06 15:19:38 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1

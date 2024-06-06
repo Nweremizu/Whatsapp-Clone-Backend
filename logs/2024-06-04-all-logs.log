@@ -1,0 +1,110 @@
+2024-06-04 09:42:05 [31merror[39m: uncaughtException: Unexpected identifier 'groupImage'
+C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\models\chatModel.js:25
+    groupImage: {
+    ^^^^^^^^^^
+
+SyntaxError: Unexpected identifier 'groupImage'
+    at internalCompileFunction (node:internal/vm:77:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1288:20)
+    at Module._compile (node:internal/modules/cjs/loader:1340:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at Object.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\controllers\userController.js:4:14)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+2024-06-04 09:44:48 [31merror[39m: 404 - User not found - /api/v1/auth/refreshToken - POST - ::1
+2024-06-04 09:45:52 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 09:45:53 [31merror[39m: 404 - User not found - /api/v1/auth/refreshToken - POST - ::1
+2024-06-04 09:46:21 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 09:46:21 [31merror[39m: 404 - User not found - /api/v1/auth/refreshToken - POST - ::1
+2024-06-04 09:54:33 [31merror[39m: uncaughtException: Chat validation failed: lastMessage: Cast to ObjectId failed for value "hey" (type string) at path "lastMessage" because of "BSONError"
+ValidationError: Chat validation failed: lastMessage: Cast to ObjectId failed for value "hey" (type string) at path "lastMessage" because of "BSONError"
+    at Document.invalidate (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\document.js:3289:32)
+    at model.$set (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\document.js:1463:12)
+    at model.set [as lastMessage] (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\helpers\document\compile.js:205:19)
+    at Socket.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\server.js:151:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-04 09:55:54 [31merror[39m: uncaughtException: callback is not a function
+TypeError: callback is not a function
+    at Socket.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\server.js:164:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-04 10:13:13 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 10:14:39 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 10:20:42 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 10:23:07 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 10:30:01 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 10:30:03 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 10:30:07 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 11:05:16 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 11:05:20 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 11:05:21 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 11:07:01 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 11:07:11 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 11:07:28 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 11:11:45 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 11:13:37 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 12:04:55 [31merror[39m: 400 - User already exists - /api/v1/auth/signup - POST - ::1
+2024-06-04 12:07:50 [31merror[39m: 400 - User already exists - /api/v1/auth/signup - POST - ::1
+2024-06-04 12:15:12 [31merror[39m: uncaughtException: callback is not a function
+TypeError: callback is not a function
+    at Socket.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\server.js:164:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-04 13:04:28 [31merror[39m: uncaughtException: callback is not a function
+TypeError: callback is not a function
+    at Socket.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\server.js:164:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-04 13:22:01 [31merror[39m: uncaughtException: callback is not a function
+TypeError: callback is not a function
+    at Socket.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\server.js:164:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-04 13:27:56 [31merror[39m: uncaughtException: callback is not a function
+TypeError: callback is not a function
+    at Socket.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\server.js:164:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-04 13:32:13 [31merror[39m: uncaughtException: callback is not a function
+TypeError: callback is not a function
+    at Socket.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\server.js:164:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-04 13:34:26 [31merror[39m: uncaughtException: callback is not a function
+TypeError: callback is not a function
+    at Socket.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\server.js:164:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-04 13:35:19 [31merror[39m: uncaughtException: callback is not a function
+TypeError: callback is not a function
+    at Socket.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\server.js:164:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-04 13:42:19 [31merror[39m: uncaughtException: callback is not a function
+TypeError: callback is not a function
+    at Socket.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\server.js:153:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-04 13:55:13 [31merror[39m: uncaughtException: callback is not a function
+TypeError: callback is not a function
+    at Socket.<anonymous> (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\server.js:153:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-06-04 14:53:30 [31merror[39m: 401 - Invalid email or password - /api/v1/auth/login - POST - ::1
+2024-06-04 18:59:09 [31merror[39m: uncaughtException: User validation failed: status: `last seen at Tue Jun 04 2024 18:59:09 GMT+0100 (West Africa Standard Time)` is not a valid enum value for path `status`.
+ValidationError: User validation failed: status: `last seen at Tue Jun 04 2024 18:59:09 GMT+0100 (West Africa Standard Time)` is not a valid enum value for path `status`.
+    at Document.invalidate (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\document.js:3289:32)
+    at C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\document.js:3050:17
+    at C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\schemaType.js:1388:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-06-04 19:02:15 [31merror[39m: uncaughtException: User validation failed: status: `last seen at Tue Jun 04 2024 19:02:15 GMT+0100 (West Africa Standard Time)` is not a valid enum value for path `status`.
+ValidationError: User validation failed: status: `last seen at Tue Jun 04 2024 19:02:15 GMT+0100 (West Africa Standard Time)` is not a valid enum value for path `status`.
+    at Document.invalidate (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\document.js:3289:32)
+    at C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\document.js:3050:17
+    at C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\schemaType.js:1388:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-06-04 19:02:55 [31merror[39m: uncaughtException: User validation failed: status: `last seen at 7:02:54 PM` is not a valid enum value for path `status`.
+ValidationError: User validation failed: status: `last seen at 7:02:54 PM` is not a valid enum value for path `status`.
+    at Document.invalidate (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\document.js:3289:32)
+    at C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\document.js:3050:17
+    at C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\schemaType.js:1388:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2024-06-04 19:43:04 [31merror[39m: uncaughtException: User validation failed: status: `last seen at Tue Jun 04 2024` is not a valid enum value for path `status`.
+ValidationError: User validation failed: status: `last seen at Tue Jun 04 2024` is not a valid enum value for path `status`.
+    at Document.invalidate (C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\document.js:3289:32)
+    at C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\document.js:3050:17
+    at C:\Users\Brunex790\Documents\MY CODE\Whatsapp\Backend\node_modules\mongoose\lib\schemaType.js:1388:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
