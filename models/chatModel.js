@@ -9,6 +9,12 @@ const chatSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    groupName: {
+      type: String,
+      required: function () {
+        return this.isGroupChat;
+      },
+    },
     users: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -30,6 +36,12 @@ const chatSchema = new mongoose.Schema(
         message: (props) => `${props.value} is not a valid URL`,
       },
     },
+    groupAdmins: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
     createdAt: {
       type: Date,
       default: Date.now,
@@ -71,7 +83,7 @@ chatSchema.pre("remove", async function (next) {
 chatSchema.pre(/^find/, function (next) {
   this.populate({
     path: "users",
-    select: "username email status",
+    select: "username email status avatar",
   });
   next();
 });

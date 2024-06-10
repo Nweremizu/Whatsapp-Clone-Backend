@@ -31,6 +31,9 @@ const userSchema = new mongoose.Schema({
     required: [true, "Password is required"],
     select: false,
   },
+  avatar: {
+    type: String,
+  },
   status: {
     type: String,
     enum: ["online", "offline"],

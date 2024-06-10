@@ -64,6 +64,32 @@ const messageSchema = new mongoose.Schema(
   },
 );
 
+messageSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: "sender",
+    select: "username avatar _id",
+  });
+  next();
+});
+
+// populate the sender fields on create
+messageSchema.pre("save", function (next) {
+  this.populate({
+    path: "sender",
+    select: "username avatar _id",
+  });
+  next();
+});
+
+// post populate the sender fields on create
+messageSchema.post("save", (doc, next) => {
+  doc.populate({
+    path: "sender",
+    select: "username avatar _id",
+  });
+  next();
+});
+
 const Message = mongoose.model("Message", messageSchema);
 
 module.exports = Message;

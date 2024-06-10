@@ -81,7 +81,7 @@ io.on("connection", async (socket) => {
   // get all Users
   socket.on("getUsers", async (callback) => {
     try {
-      let users = await User.find().select("username email _id status");
+      let users = await User.find().select("username email _id status avatar");
       users = users.filter(
         (user) => user._id.toString() !== socket.user._id.toString(),
       );
@@ -97,10 +97,11 @@ io.on("connection", async (socket) => {
     try {
       const { userId } = data;
       // check if chat already exists
-      const chatEx = await Chat.findOne({ users: [socket.user._id, userId] });
-      if (chatEx) {
-        callback(chatEx);
-        return;
+      const chatExists = await Chat.findOne({
+        users: { $all: [socket.user._id.toString(), userId] },
+      });
+      if (chatExists) {
+        return callback(chatExists);
       }
 
       const chat = await Chat.create({
@@ -110,6 +111,23 @@ io.on("connection", async (socket) => {
     } catch (error) {
       logger.error(error);
       console.log(error.message);
+    }
+  });
+
+  socket.on("createGroupChat", async (data, callback) => {
+    try {
+      const { userIds, groupImage, groupName } = data;
+      const chat = await Chat.create({
+        isGroupChat: true,
+        users: userIds,
+        groupName,
+        groupImage,
+        groupAdmins: [socket.user._id],
+      });
+      callback(chat);
+    } catch (error) {
+      logger.error(error);
+      console.log(error);
     }
   });
 
@@ -175,6 +193,7 @@ io.on("connection", async (socket) => {
     chat.lastMessageTime = newMessage.timestamp;
     await chat.save();
 
+    newMessage = await newMessage.populate("chatId");
     io.emit("new", newMessage);
     io.emit("newSide", newMessage);
   });
@@ -202,9 +221,12 @@ io.on("connection", async (socket) => {
   //get lastest Message of a chat
   socket.on("getLastMessage", async (data, callback) => {
     const { chatId } = data;
-    const lastMessage = await Message.findOne({ chatId }).sort({
-      timestamp: -1,
-    });
+    const lastMessage = await Message.findOne({ chatId })
+      .sort({
+        timestamp: -1,
+      })
+      .populate("sender", "username avatar")
+      .populate("chatId", "isGroupChat");
     callback(lastMessage);
   });
 
