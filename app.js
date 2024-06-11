@@ -37,7 +37,7 @@ const limiter = rateLimit({
 // -------------- Middlewares --------------
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:3000", "https://whatsapp-clone-frontend-pied.vercel.app"]
     credentials: true,
   }),
 ); // Enable All CORS Requests
