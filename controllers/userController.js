@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const User = require("../models/userModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
@@ -60,15 +61,19 @@ exports.uploadAvatar = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.uploadGroupAvatar = catchAsync(async (req, res, next) => {
-  const chat = await Chat.findById(req.params.id);
-  if (!chat) {
-    return next(new AppError("Chat not found", 404));
+exports.getUsers = catchAsync(async (req, res) => {
+  try {
+    const { query } = req.query;
+    const users = await User.find({
+      username: { $regex: query, $options: "i" },
+    });
+    return res.status(200).json({
+      users,
+    });
+  } catch (error) {
+    console.error("Error retrieving Users: ", error);
+    return res.status(500).json({
+      message: "Error",
+    });
   }
-  chat.groupImage = req.file.path;
-  await chat.save();
-  res.status(200).json({
-    status: "success",
-    chat,
-  });
 });

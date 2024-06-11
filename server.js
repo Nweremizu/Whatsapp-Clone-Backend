@@ -131,6 +131,63 @@ io.on("connection", async (socket) => {
     }
   });
 
+  // add User to Group Chat
+  socket.on("addUserToGroupChat", async (data, callback) => {
+    try {
+      const { chatId, userId } = data;
+      const chat = await Chat.findById(chatId);
+      chat.users.push(userId);
+      await chat.save();
+      callback(chat);
+    } catch (error) {
+      logger.error(error);
+      console.log(error);
+    }
+  });
+
+  // remove User from Group Chat
+  socket.on("removeUserFromGroupChat", async (data, callback) => {
+    try {
+      const { chatId, userId } = data;
+      const chat = await Chat.findById(chatId);
+      chat.users = chat.users.filter(
+        (user) => user.toString() !== userId.toString(),
+      );
+      await chat.save();
+      callback(chat);
+    } catch (error) {
+      logger.error(error);
+      console.log(error);
+    }
+  });
+
+  // leave Group Chat
+  socket.on("leaveGroupChat", async (data, callback) => {
+    try {
+      const { chatId } = data;
+      const chat = await Chat.findById(chatId);
+      if (chat.isGroupChat) {
+        // check if the user is the last admin
+        if (
+          chat.groupAdmins.length === 1 &&
+          chat.groupAdmins.includes(socket.user._id)
+        ) {
+          // if the user is the last admin, delete the chat
+          await chat.remove();
+          return;
+        }
+        // remove the user from the chat
+        chat.users = chat.users.filter(
+          (user) => user._id.toString() !== socket.user._id.toString(),
+        );
+        await chat.save();
+        callback(chat);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  });
+
   // get all chats
   socket.on("getChats", async (callback) => {
     try {
