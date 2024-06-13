@@ -40,7 +40,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "https://whatsapp-clone-frontend-pied.vercel.app",
-      "chat-piedd.vercel.app",
+      "https://chat-piedd.vercel.app",
     ],
     credentials: true,
   }),
