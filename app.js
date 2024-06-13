@@ -61,6 +61,12 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use(cookieParser()); // Parse Cookie header and populate req.cookies with an object keyed by the cookie names
 
 // -------------- Routes --------------
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: "success",
+    message: "Hello from the server!",
+  });
+});
 app.use("/api/v1/users", require("./routes/userRoutes"));
 app.use("/api/v1/auth", require("./routes/authRoutes"));
 
